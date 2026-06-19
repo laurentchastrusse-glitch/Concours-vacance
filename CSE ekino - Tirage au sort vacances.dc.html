@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @font-face {
+      font-family: 'Graphik';
+      src: url('fonts/Graphik-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Graphik', 'Helvetica Neue', Arial, sans-serif;
+      color: #0A0A0A;
+      background: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.75); }
+    }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(7px); }
+    }
+  </style>
+</helmet>
+
+<!-- ═══════════════════════════════════════ HEADER ═══ -->
+<header style="position: sticky; top: 0; z-index: 100; background: #FFFFFF; border-bottom: 1px solid #E5E5E5; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <div style="width: 38px; height: 38px; background: #FFD900; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <span style="font-family: 'Graphik','Helvetica Neue',Arial,sans-serif; font-weight: 900; font-size: 10px; letter-spacing: -0.4px; color: #0A0A0A; line-height: 1;">ekino.</span>
+    </div>
+    <span style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #0A0A0A; line-height: 1;">CSE</span>
+  </div>
+  <div style="background: #FFD900; padding: 6px 14px; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #0A0A0A;">
+    Jeu concours
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════ HERO ═══ -->
+<section style="position: relative; background: linear-gradient(160deg, #071828 0%, #0D3254 55%, #134E82 100%); min-height: 600px; display: flex; align-items: center; overflow: hidden; padding: 100px 40px 120px;">
+
+  <!-- Decorative yellow blocks — ekino DNA -->
+  <div style="position: absolute; top: -60px; right: -60px; width: 400px; height: 400px; background: #FFD900; opacity: 0.07; transform: rotate(18deg); pointer-events: none;"></div>
+  <div style="position: absolute; bottom: 80px; left: -80px; width: 240px; height: 240px; background: #FFD900; opacity: 0.04; transform: rotate(-12deg); pointer-events: none;"></div>
+
+  <div style="max-width: 1100px; margin: 0 auto; width: 100%; position: relative; z-index: 2;">
+
+    <!-- Badge -->
+    <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(255,217,0,0.12); border: 1px solid rgba(255,217,0,0.35); padding: 7px 18px; margin-bottom: 36px;">
+      <span style="width: 7px; height: 7px; background: #FFD900; border-radius: 50%; display: inline-block; animation: pulse 2s ease-in-out infinite;"></span>
+      <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFD900;">Jeu concours · Ouvert à tous les collaborateurs ekino</span>
+    </div>
+
+    <!-- Headline -->
+    <h1 style="font-size: clamp(42px, 6.5vw, 80px); font-weight: 900; color: #FFFFFF; line-height: 1.03; letter-spacing: -0.03em; margin: 0 0 28px; max-width: 880px;">
+      En août, prolongez<br>
+      vos vacances <span style="color: #FFD900;">au bord de l'eau</span>
+    </h1>
+
+    <!-- Subtitle -->
+    <p style="font-size: clamp(16px, 2vw, 21px); color: rgba(255,255,255,0.72); line-height: 1.55; margin: 0 0 48px; max-width: 640px;">
+      Le CSE ekino vous offre la chance de remporter votre séjour en <strong style="color: #FFFFFF; font-weight: 700;">mobilhome 4 personnes</strong> — sur la <strong style="color: #FFFFFF; font-weight: 700;">côte Atlantique</strong> à Soulac-sur-Mer, ou en <strong style="color: #FFFFFF; font-weight: 700;">Provence méditerranéenne</strong>, près de Marseille. À vous de choisir votre destination !
+    </p>
+
+    <!-- Key info pills -->
+    <div style="display: flex; gap: 32px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="display: flex; line-height: 1;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFD900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2c1.3 0 1.9-.5 2.5-1"></path><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2s2.5 2 5 2c1.3 0 1.9-.5 2.5-1"></path><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2s2.5 2 5 2c1.3 0 1.9-.5 2.5-1"></path></svg></span>
+        <div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.45); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px;">Deux destinations</div>
+          <div style="font-size: 15px; font-weight: 700; color: #FFFFFF;">Atlantique &amp; Méditerranée</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="display: flex; line-height: 1;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFD900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M8 2v4M16 2v4M3 10h18"></path></svg></span>
+        <div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.45); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px;">Dates du séjour</div>
+          <div style="font-size: 15px; font-weight: 700; color: #FFFFFF;">20 — 22 août 2026</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="display: flex; line-height: 1;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFD900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 21 14 3M20.5 21 10 3M15.5 21 12 15l-3.5 6M2 21h20"></path></svg></span>
+        <div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.45); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px;">Lots par destination</div>
+          <div style="font-size: 15px; font-weight: 700; color: #FFFFFF;">5 mobilhomes chacun</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div style="position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px; animation: scrollBounce 2s ease-in-out infinite;">
+    <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4);">Découvrir</span>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 9l5 5 5-5" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="square"></path></svg>
+  </div>
+
+  <!-- Wave separator -->
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; line-height: 0; pointer-events: none;">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none" style="width: 100%; height: 64px; display: block;">
+      <path d="M0,32 C240,64 480,0 720,32 C960,64 1200,0 1440,32 L1440,64 L0,64 Z" fill="#FFFFFF"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ LOTS SECTION ═══ -->
+<section style="background: #FFFFFF; padding: 80px 40px 88px;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+
+    <!-- Section header -->
+    <div style="margin-bottom: 56px;">
+      <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #737373; margin-bottom: 18px; display: flex; align-items: center; gap: 14px;">
+        <span style="display: block; width: 32px; height: 2px; background: #FFD900;"></span>
+        Les lots à gagner
+      </div>
+      <h2 style="font-size: clamp(28px, 4vw, 44px); font-weight: 900; letter-spacing: -0.025em; color: #0A0A0A; margin: 0 0 16px; line-height: 1.05;">Deux destinations de rêve pour l'été</h2>
+      <p style="font-size: 18px; color: #525252; margin: 0; max-width: 580px; line-height: 1.55; text-wrap: pretty;">Découvrez les deux campings Yelloh ! Village mis en jeu. Cliquez sur une carte pour explorer le camping en détail.</p>
+    </div>
+
+    <!-- Cards grid — auto-stack on mobile -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(480px,100%), 1fr)); gap: 24px; align-items: start;">
+
+      <!-- ────── LOT 1 : SOULAC / ATLANTIQUE ────── -->
+      <a href="https://www.yellohvillage.fr/camping/domaine_les_carrelets/nos_locations#content" target="_blank" rel="noopener" style="display: block; text-decoration: none; color: inherit; border: 1px solid #E5E5E5; background: #FFFFFF; overflow: hidden; position: relative; transition: box-shadow 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.2s cubic-bezier(0.22,1,0.36,1);" style-hover="box-shadow: 0 14px 36px rgba(10,10,10,0.13); transform: translateY(-4px);">
+
+        <!-- Image -->
+        <div style="height: 240px; position: relative; overflow: hidden; background: #0D3254;">
+          <img src="https://img.yellohvillage.fr/var/plain_site/storage/images/_aliases/visuel_page_village_mobile/site_marchand/camping/domaine_les_carrelets/3542369-82-fre-FR/domaine_les_carrelets.jpg" alt="Camping Domaine Les Carrelets — Soulac-sur-Mer" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(7,24,40,0.82) 0%, rgba(7,24,40,0.15) 48%, rgba(7,24,40,0) 72%);"></div>
+
+          <div style="position: absolute; top: 18px; left: 18px; width: 38px; height: 38px; background: #FFD900; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 900; color: #0A0A0A;">1</div>
+          <div style="position: absolute; top: 18px; right: 18px; background: rgba(255,255,255,0.92); padding: 6px 13px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #0A0A0A;">Côte Atlantique</div>
+
+          <div style="position: absolute; bottom: 20px; left: 20px; padding-right: 20px;">
+            <div style="font-size: 25px; font-weight: 900; color: #FFFFFF; letter-spacing: -0.025em; line-height: 1.1;">Soulac-sur-Mer</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.85); margin-top: 4px;">Gironde · Nouvelle-Aquitaine</div>
+          </div>
+        </div>
+
+        <!-- Body -->
+        <div style="padding: 30px;">
+          <div style="margin-bottom: 22px;">
+            <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #737373; margin-bottom: 8px;">Yelloh ! Village</div>
+            <h3 style="font-size: 23px; font-weight: 900; letter-spacing: -0.015em; color: #0A0A0A; margin: 0 0 8px; line-height: 1.15;">Domaine Les Carrelets</h3>
+            <div style="font-size: 15px; color: #525252; display: flex; align-items: center; gap: 6px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>Soulac-sur-Mer, Gironde (33)</div>
+          </div>
+
+          <!-- Details grid -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 20px 0; border-top: 1px solid #E5E5E5; border-bottom: 1px solid #E5E5E5; margin-bottom: 22px;">
+            <div>
+              <div style="font-size: 10px; color: #A3A3A3; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px;">Dates</div>
+              <div style="font-size: 14px; font-weight: 700; color: #0A0A0A;">20 — 22 août 2026</div>
+            </div>
+            <div>
+              <div style="font-size: 10px; color: #A3A3A3; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px;">Logement</div>
+              <div style="font-size: 14px; font-weight: 700; color: #0A0A0A;">Mobilhome 4 pers.</div>
+            </div>
+            <div>
+              <div style="font-size: 10px; color: #A3A3A3; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px;">Lots disponibles</div>
+              <div style="font-size: 14px; font-weight: 700; color: #0A0A0A;">5 mobilhomes</div>
+            </div>
+            <div>
+              <div style="font-size: 10px; color: #A3A3A3; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px;">Tirage au sort</div>
+              <div style="font-size: 14px; font-weight: 700; color: #0A0A0A;">Première semaine de juillet</div>
+            </div>
+          </div>
+
+          <!-- Equipment chips -->
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
+            <span style="background: #F2F2F2; padding: 5px 10px; font-size: 12px; color: #525252;">Climatisation</span>
+            <span style="background: #F2F2F2; padding: 5px 10px; font-size: 12px; color: #525252;">Terrasse 15 m²</span>
+            <span style="background: #F2F2F2; padding: 5px 10px; font-size: 12px; color: #525252;">Plancha</span>
+            <span style="background: #F2F2F2; padding: 5px 10px; font-size: 12px; color: #525252;">Lave-vaisselle</span>
+            <span style="background: #F2F2F2; padding: 5px 10px; font-size: 12px; color: #525252;">Nespresso</span>
+            <span style="background: #F2F2F2; padding: 5px 10px; font-size: 12px; color: #525252;">Salon de jardin</span>
+          </div>
+
+          <!-- Price row -->
+          <div style="display: flex; align-items: center; gap: 16px; padding-top: 22px; border-top: 1px solid #E5E5E5;">
+            <div>
+              <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #737373; margin-bottom: 5px;">Prix CSE</div>
+              <div style="display: flex; align-items: baseline; gap: 12px;">
+                <span style="font-size: 38px; font-weight: 900; letter-spacing: -0.03em; color: #0A0A0A; line-height: 1;">150 €</span>
+                <span style="font-size: 20px; color: #A3A3A3; text-decoration: line-through;">492 €</span>
+              </div>
+            </div>
+            <div style="margin-left: auto; background: #FFD900; padding: 9px 16px; font-size: 14px; font-weight: 900; color: #0A0A0A; letter-spacing: -0.01em; white-space: nowrap;">
+              −69 %
+            </div>
+          </div>
+
+          <!-- Link affordance -->
+          <div style="margin-top: 22px; display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.02em; color: #0A0A0A;">
+            Voir le camping sur Yelloh ! Village
+            <span style="font-size: 14px;">↗</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ────── LOT 2 : LUBERON PARC / PROVENCE ────── -->
+      <a href="https://www.yellohvillage.fr/camping/luberon_parc#content" target="_blank" rel="noopener" style="display: block; text-decoration: none; color: inherit; border: 1px solid #E5E5E5; background: #FFFFFF; overflow: hidden; position: relative; transition: box-shadow 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.2s cubic-bezier(0.22,1,0.36,1);" style-hover="box-shadow: 0 14px 36px rgba(10,10,10,0.13); transform: translateY(-4px);">
+
+        <!-- Image -->
+        <div style="height: 240px; position: relative; overflow: hidden; background: #1E4D6A;">
+          <img src="https://img.yellohvillage.fr/var/plain_site/storage/images/_aliases/visuel_page_village_mobile/site_marchand/camping/luberon_parc/1080912-480-fre-FR/luberon_parc.jpg" alt="Camping Luberon Parc — Charleval, Provence" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(12,30,24,0.82) 0%, rgba(12,30,24,0.15) 48%, rgba(12,30,24,0) 72%);"></div>
+
+          <div style="position: absolute; top: 18px; left: 18px; width: 38px; height: 38px; background: #FFD900; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 900; color: #0A0A0A;">2</div>
+          <div style="position: absolute; top: 18px; right: 18px; background: rgba(255,255,255,0.92); padding: 6px 13px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #0A0A0A;">Provence · Méditerranée</div>
+
+          <div style="position: absolute; bottom: 20px; left: 20px; padding-right: 20px;">
+            <div style="font-size: 25px; font-weight: 900; color: #FFFFFF; letter-spacing: -0.025em; line-height: 1.1;">Charleval</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.85); margin-top: 4px;">Bouches-du-Rhône · à 1h de Marseille</div>
+          </div>
+        </div>
+
+        <!-- Body -->
+        <div style="padding: 30px;">
+          <div style="margin-bottom: 22px;">
+            <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #737373; margin-bottom: 8px;">Yelloh ! Village</div>
+            <h3 style="font-size: 23px; font-weight: 900; letter-spacing: -0.015em; color: #0A0A0A; margin: 0 0 8px; line-height: 1.15;">Luberon Parc</h3>
+            <div style="font-size: 15px; color: #525252; display: flex; align-items: center; gap: 6px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>Charleval, Bouches-du-Rhône (13)</div>
+          </div>
+
+          <!-- Details grid -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 20px 0; border-top: 1px solid #E5E5E5; border-bottom: 1px solid #E5E5E5; margin-bottom: 22px;">
+            <div>
+              <div style="font-size: 10px; color: #A3A3A3; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px;">Dates</div>
+              <div style="font-size: 14px; font-weight: 700; color: #0A0A0A;">20 — 22 août 2026</div>
+            </div>
+            <div>
+              <div style="font-size: 10px; color: #A3A3A3; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px;">Logement</div>
+              <div style="font-size: 14px; font-weight: 700; color: #0A0A0A;">Mobilhome 4 pers.</div>
+            </div>
+            <div>
+              <div style="font-size: 10px; color: #A3A3A3; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px;">Lots disponibles</div>
+              <div style="font-size: 14px; font-weight: 700; color: #0A0A0A;">5 mobilhomes</div>
+            </div>
+            <div>
+              <div style="font-size: 10px; color: #A3A3A3; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px;">Tirage au sort</div>
+              <div style="font-size: 14px; font-weight: 700; color: #0A0A0A;">Première semaine de juillet</div>
+            </div>
+          </div>
+
+          <!-- Equipment chips -->
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
+            <span style="background: #F2F2F2; padding: 5px 10px; font-size: 12px; color: #525252;">Parc aquatique</span>
+            <span style="background: #F2F2F2; padding: 5px 10px; font-size: 12px; color: #525252;">Piscine couverte chauffée</span>
+            <span style="background: #F2F2F2; padding: 5px 10px; font-size: 12px; color: #525252;">Toboggans</span>
+            <span style="background: #F2F2F2; padding: 5px 10px; font-size: 12px; color: #525252;">Restaurant</span>
+            <span style="background: #F2F2F2; padding: 5px 10px; font-size: 12px; color: #525252;">Climatisation</span>
+          </div>
+
+          <!-- Price row -->
+          <div style="display: flex; align-items: center; gap: 16px; padding-top: 22px; border-top: 1px solid #E5E5E5;">
+            <div>
+              <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #737373; margin-bottom: 5px;">Prix CSE</div>
+              <div style="display: flex; align-items: baseline; gap: 12px;">
+                <span style="font-size: 38px; font-weight: 900; letter-spacing: -0.03em; color: #0A0A0A; line-height: 1;">280 €</span>
+                <span style="font-size: 20px; color: #A3A3A3; text-decoration: line-through;">560 €</span>
+              </div>
+            </div>
+            <div style="margin-left: auto; background: #FFD900; padding: 9px 16px; font-size: 14px; font-weight: 900; color: #0A0A0A; letter-spacing: -0.01em; white-space: nowrap;">
+              −50 %
+            </div>
+          </div>
+
+          <!-- Link affordance -->
+          <div style="margin-top: 22px; display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.02em; color: #0A0A0A;">
+            Voir le camping sur Yelloh ! Village
+            <span style="font-size: 14px;">↗</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ INSCRIPTION ═══ -->
+<section style="background: #0A0A0A; padding: 96px 40px;">
+  <div style="max-width: 580px; margin: 0 auto; text-align: center;">
+
+    <!-- Form state -->
+    <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+      <div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 28px;">
+          <span style="display: block; width: 32px; height: 1px; background: #FFD900;"></span>
+          <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #FFD900;">Participation gratuite</span>
+          <span style="display: block; width: 32px; height: 1px; background: #FFD900;"></span>
+        </div>
+
+        <h2 style="font-size: clamp(28px, 4vw, 44px); font-weight: 900; letter-spacing: -0.025em; color: #FFFFFF; margin: 0 0 16px; line-height: 1.05;">Tentez votre chance</h2>
+        <p style="font-size: 18px; color: #8A8A8A; margin: 0 0 40px; line-height: 1.55; text-wrap: pretty;">
+          Choisissez votre destination, laissez votre email et participez. Le tirage au sort aura lieu la première semaine de juillet — les gagnants seront prévenus par email.
+        </p>
+
+        <form onSubmit="{{ onSubmit }}" style="display: flex; flex-direction: column; gap: 16px;">
+
+          <!-- Camping selector -->
+          <div style="text-align: left;">
+            <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8A8A; margin-bottom: 12px;">Je participe pour</div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+
+              <div onClick="{{ selectSoulac }}" style="flex: 1 1 150px; cursor: pointer;">
+                <sc-if value="{{ isSoulac }}" hint-placeholder-val="{{ true }}">
+                  <div style="display: flex; flex-direction: column; gap: 4px; height: 100%; padding: 14px 16px; font-size: 14px; line-height: 1.2; background: #FFD900; border: 1px solid #FFD900; color: #0A0A0A;">
+                    <span style="font-weight: 700; display: flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2c1.3 0 1.9-.5 2.5-1"></path><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2s2.5 2 5 2c1.3 0 1.9-.5 2.5-1"></path><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2s2.5 2 5 2c1.3 0 1.9-.5 2.5-1"></path></svg>Soulac-sur-Mer</span>
+                    <span style="font-weight: 400; font-size: 11px; opacity: 0.7;">Côte Atlantique · 150 €</span>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ notSoulac }}" hint-placeholder-val="{{ false }}">
+                  <div style="display: flex; flex-direction: column; gap: 4px; height: 100%; padding: 14px 16px; font-size: 14px; line-height: 1.2; background: #141414; border: 1px solid #2A2A2A; color: #E5E5E5;">
+                    <span style="font-weight: 700; display: flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2c1.3 0 1.9-.5 2.5-1"></path><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2s2.5 2 5 2c1.3 0 1.9-.5 2.5-1"></path><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2s2.5 2 5 2c1.3 0 1.9-.5 2.5-1"></path></svg>Soulac-sur-Mer</span>
+                    <span style="font-weight: 400; font-size: 11px; opacity: 0.6;">Côte Atlantique · 150 €</span>
+                  </div>
+                </sc-if>
+              </div>
+
+              <div onClick="{{ selectLuberon }}" style="flex: 1 1 150px; cursor: pointer;">
+                <sc-if value="{{ isLuberon }}" hint-placeholder-val="{{ false }}">
+                  <div style="display: flex; flex-direction: column; gap: 4px; height: 100%; padding: 14px 16px; font-size: 14px; line-height: 1.2; background: #FFD900; border: 1px solid #FFD900; color: #0A0A0A;">
+                    <span style="font-weight: 700; display: flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>Luberon Parc</span>
+                    <span style="font-weight: 400; font-size: 11px; opacity: 0.7;">Provence · 280 €</span>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ notLuberon }}" hint-placeholder-val="{{ true }}">
+                  <div style="display: flex; flex-direction: column; gap: 4px; height: 100%; padding: 14px 16px; font-size: 14px; line-height: 1.2; background: #141414; border: 1px solid #2A2A2A; color: #E5E5E5;">
+                    <span style="font-weight: 700; display: flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>Luberon Parc</span>
+                    <span style="font-weight: 400; font-size: 11px; opacity: 0.6;">Provence · 280 €</span>
+                  </div>
+                </sc-if>
+              </div>
+
+              <div onClick="{{ selectBoth }}" style="flex: 1 1 150px; cursor: pointer;">
+                <sc-if value="{{ isBoth }}" hint-placeholder-val="{{ false }}">
+                  <div style="display: flex; flex-direction: column; gap: 4px; height: 100%; padding: 14px 16px; font-size: 14px; line-height: 1.2; background: #FFD900; border: 1px solid #FFD900; color: #0A0A0A;">
+                    <span style="font-weight: 700; display: flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path><path d="M13 5v14"></path></svg>Les deux</span>
+                    <span style="font-weight: 400; font-size: 11px; opacity: 0.7;">Doublez vos chances</span>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ notBoth }}" hint-placeholder-val="{{ true }}">
+                  <div style="display: flex; flex-direction: column; gap: 4px; height: 100%; padding: 14px 16px; font-size: 14px; line-height: 1.2; background: #141414; border: 1px solid #2A2A2A; color: #E5E5E5;">
+                    <span style="font-weight: 700; display: flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path><path d="M13 5v14"></path></svg>Les deux</span>
+                    <span style="font-weight: 400; font-size: 11px; opacity: 0.6;">Doublez vos chances</span>
+                  </div>
+                </sc-if>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Email -->
+          <input
+            type="email"
+            value="{{ email }}"
+            onChange="{{ onEmailChange }}"
+            placeholder="votre.email@ekino.com"
+            style="padding: 17px 20px; font-size: 16px; font-family: 'Graphik','Helvetica Neue',Arial,sans-serif; border: 1px solid #2A2A2A; background: #141414; color: #FFFFFF; outline: none; width: 100%; transition: border-color 0.15s;"
+          >
+          <sc-if value="{{ emailError }}" hint-placeholder-val="{{ false }}">
+            <div style="font-size: 13px; color: #EF4444; text-align: left; padding: 2px 0;">⚠️&nbsp; Veuillez entrer une adresse email valide.</div>
+          </sc-if>
+
+          <button
+            type="submit"
+            style="padding: 17px 32px; background: #FFD900; color: #0A0A0A; font-family: 'Graphik','Helvetica Neue',Arial,sans-serif; font-size: 16px; font-weight: 700; border: none; cursor: pointer; letter-spacing: -0.01em; width: 100%; transition: background 0.15s cubic-bezier(0.22,1,0.36,1), transform 0.15s cubic-bezier(0.22,1,0.36,1);"
+            style-hover="background: #F5C800; transform: translateY(-2px);"
+          >
+            Je participe au tirage au sort&nbsp;→
+          </button>
+        </form>
+
+        <p style="font-size: 12px; color: #404040; margin: 22px 0 0; line-height: 1.6;">
+          En participant, vous acceptez le règlement du jeu concours CSE.<br>
+          Réservé aux collaborateurs ekino · une seule participation par destination.
+        </p>
+      </div>
+    </sc-if>
+
+    <!-- Confirmation state -->
+    <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+      <div style="padding: 40px 0;">
+        <div style="width: 72px; height: 72px; background: #FFD900; margin: 0 auto 28px; display: flex; align-items: center; justify-content: center;"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></div>
+        <h2 style="font-size: 36px; font-weight: 900; letter-spacing: -0.025em; color: #FFD900; margin: 0 0 18px; line-height: 1.05;">C'est enregistré !</h2>
+        <p style="font-size: 18px; color: #FFFFFF; margin: 0 0 14px; line-height: 1.55;">Votre participation pour <strong style="color: #FFD900;">{{ campingLabel }}</strong> est bien enregistrée.</p>
+        <p style="font-size: 16px; color: #8A8A8A; margin: 0; line-height: 1.65;">
+          Le tirage au sort aura lieu la <strong style="color: #FFFFFF;">première semaine de juillet 2026</strong>.<br>
+          Vous serez contacté(e) par email en cas de victoire.<br><br>
+          <span style="color: #737373; font-size: 15px;">Bonne chance à vous !</span>
+        </p>
+      </div>
+    </sc-if>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FOOTER ═══ -->
+<footer style="background: #0A0A0A; border-top: 1px solid #1A1A1A; padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <div style="width: 30px; height: 30px; background: #FFD900; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <span style="font-family: 'Graphik','Helvetica Neue',Arial,sans-serif; font-weight: 900; font-size: 9px; letter-spacing: -0.3px; color: #0A0A0A;">ekino.</span>
+    </div>
+    <span style="font-size: 13px; color: #404040;">CSE ekino</span>
+  </div>
+  <div style="font-size: 12px; color: #333333; text-align: right; line-height: 1.5;">
+    Jeu concours interne · 2026 · Non commercial<br>Règlement disponible auprès du CSE
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1280, &quot;height&quot;: 900 }
+}">
+class Component extends DCLogic {
+  state = {
+    submitted: false,
+    email: '',
+    emailError: false,
+    chosen: 'soulac',
+  };
+
+  renderVals() {
+    const { submitted, email, emailError, chosen } = this.state;
+
+    const onEmailChange = (e) => {
+      this.setState({ email: e.target.value, emailError: false });
+    };
+
+    const onSubmit = (e) => {
+      e.preventDefault();
+      const val = this.state.email.trim();
+      const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+      if (!valid) {
+        this.setState({ emailError: true });
+        return;
+      }
+      this.setState({ submitted: true });
+    };
+
+    const choose = (c) => () => this.setState({ chosen: c });
+
+    const labels = {
+      soulac: 'Soulac-sur-Mer (Domaine Les Carrelets)',
+      luberon: 'Luberon Parc (Provence)',
+      both: 'Soulac-sur-Mer et Luberon Parc',
+    };
+
+    return {
+      submitted,
+      notSubmitted: !submitted,
+      email,
+      emailError,
+      campingLabel: labels[chosen] || labels.soulac,
+      isSoulac: chosen === 'soulac',
+      isLuberon: chosen === 'luberon',
+      isBoth: chosen === 'both',
+      notSoulac: chosen !== 'soulac',
+      notLuberon: chosen !== 'luberon',
+      notBoth: chosen !== 'both',
+      selectSoulac: choose('soulac'),
+      selectLuberon: choose('luberon'),
+      selectBoth: choose('both'),
+      onEmailChange,
+      onSubmit,
+    };
+  }
+}
+</script>
+</body>
+</html>
